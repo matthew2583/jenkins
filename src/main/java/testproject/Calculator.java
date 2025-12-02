@@ -23,5 +23,11 @@ public class Calculator {
      */
     public static int subtract(int x, int y) {
         return x - y;
-    }
+    
+     }
+
+    public int divide(int a, int b) {
+    	if (b == 0) throw new IllegalArgumentException("Division by zero");
+    	return a / b;
+     }	
 }

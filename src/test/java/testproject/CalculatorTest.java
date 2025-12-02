@@ -16,11 +16,13 @@ public class CalculatorTest {
     }
     @Test
     public void testDivide() {
-         assertEquals(5, new Calculator().divide(10, 2));
+         assertThat(Calculator.divide(10, 2)).isEqualTo(5);
     }
 
     @Test
     public void testDivideByZero() {
-         assertThrows(IllegalArgumentException.class, () -> new Calculator().divide(10, 0));
+         assertThatThrownBy(() -> Calculator.divide(10, 0))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Division by zero");
     }
 }
